@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:02:19 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 02:18:19 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/27 17:08:51 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Phonebook
 	public:
 		void		AddContact(Contact contact);
 		bool		ShowAll(void) const;
-		void		ShowContact(int index) const;
+		bool		ShowContact(int index) const;
 		int			getCounter() const;
 		Contact		getContact(int index) const;
 		Phonebook()

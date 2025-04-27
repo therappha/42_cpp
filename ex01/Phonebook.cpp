@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:46:42 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 02:45:31 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/27 17:12:28 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int Phonebook::getCounter(void) const
 	return (contact_counter);
 }
 
-void	Phonebook::ShowContact(int index) const
+bool	Phonebook::ShowContact(int index) const
 {
 	if (index >= 0 && index < contact_counter)
 	{
@@ -42,11 +42,13 @@ void	Phonebook::ShowContact(int index) const
 		std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
 		std::cout << "Phone: " << contacts[index].getPhoneNumber() << std::endl;
 		std::cout << "Darkest secret: " << contacts[index].getDarkestSecret() << std::endl;
+		return (true);
 	}
 	else
-		std::cout << "Please enter a valid contact ID" << std::endl;
+	{
+		return false;
+	}
 }
-//index, first name, last name and nickname.
 bool	Phonebook::ShowAll(void) const
 {
 	Contact contact;
@@ -65,12 +67,21 @@ bool	Phonebook::ShowAll(void) const
 		print_column("----------", "----------", "----------", "----------");
 		index = (char)i + 1 + '0';
 		print_column(index, contacts[i].getName(), contacts[i].getLastname(), contacts[i].getNickname());
-
-
 	}
-	print_column("----------", "----------", "----------", "----------");
+	print_column("----------" , "----------", "----------", "----------");
+	index.clear();
 
-	
+	while (index.length() != 1 && !std::isdigit(index[0]))
+	{
+		std::cout << "Please select one of the contact index: ";
+		std::getline(std::cin, index);
+		std::cout << std::endl;
+	}
+
+	if (!ShowContact(index[0] - '0' - 1))
+		std::cout << "Contact ID does not exist" << std::endl;
+
+	std::cout << std::endl;
 	return true;
 }
 
