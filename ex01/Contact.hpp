@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 18:55:36 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/26 20:33:41 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/27 02:03:18 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,23 @@
 
 #include <string>
 #include <iostream>
+#include <cctype>
 
 using std::string;
 
 
 //first name, last name, nickname, phone number, and darkest secret. A saved contact can’t have empty fields.
+
+// the constructor can also be done this way!;
+/*Contact(string name, string surname, string nick, string number, string secret)
+{
+	_firstName = name;
+	_lastName = surname;
+	_nickName = nick;
+	_phoneNumber = number;
+	_darkestSecret = secret;
+}*/
+
 class Contact
 {
 	private:
@@ -33,27 +45,19 @@ class Contact
 
 	public:
 		Contact(){}
-
-		Contact(string name, string surname, string nick, string number, string secret)
-		{
-			_firstName = name;
-			_lastName = surname;
-			_nickName = nick;
-			_phoneNumber = number;
-			_darkestSecret = secret;
-		}
 		~Contact() {}
 
 		string	getName() const;
 		string	getLastname() const;
+		string	getNickname() const;
 		string	getPhoneNumber() const;
 		string	getDarkestSecret() const;
 
-		void	setName(string name);
-		void	setLastname(string last_name);
-		void	setPhoneNumber(string phone_number);
-		void	setDarkestSecret(string darkest_secret);
-
+		bool	setName(string name);
+		bool	setLastname(string last_name);
+		bool	setNickname(string nick_name);
+		bool	setPhoneNumber(string phone_number);
+		bool	setDarkestSecret(string darkest_secret);
 };
 
 

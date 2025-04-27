@@ -6,11 +6,16 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:02:19 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/26 21:00:40 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/27 02:18:19 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
+
+void	print_column(string index, string name, string lastname, string nickname);
 
 class Phonebook
 {
@@ -20,14 +25,17 @@ class Phonebook
 		int		contact_counter;
 
 	public:
-		void	AddContact(Contact contact);
-		void	ShowAll(void);
-		void	SearchIndex(int index);
+		void		AddContact(Contact contact);
+		bool		ShowAll(void) const;
+		void		ShowContact(int index) const;
+		int			getCounter() const;
+		Contact		getContact(int index) const;
 		Phonebook()
 		{
-			contact_counter = -1;
+			contact_counter = 0;
 			oldest_contact_id = -1;
 		}
 		~Phonebook() {}
 };
 
+#endif
