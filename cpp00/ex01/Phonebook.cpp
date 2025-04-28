@@ -6,11 +6,17 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:46:42 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 17:12:28 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/28 21:05:17 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+
+Phonebook::Phonebook()
+{
+	contact_counter = 0;
+	oldest_contact_id = -1;
+}
 
 void	Phonebook::AddContact(Contact contact)
 {

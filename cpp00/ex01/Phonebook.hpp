@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:02:19 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 17:08:51 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/28 21:04:58 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ class Phonebook
 		bool		ShowContact(int index) const;
 		int			getCounter() const;
 		Contact		getContact(int index) const;
-		Phonebook()
-		{
-			contact_counter = 0;
-			oldest_contact_id = -1;
-		}
+		Phonebook() {}
 		~Phonebook() {}
 };
 
