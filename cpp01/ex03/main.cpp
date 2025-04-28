@@ -1,22 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 23:38:58 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/28 23:56:29 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/04/29 00:47:06 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/04/29 00:47:07 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie* newZombie( std::string name );
-
-void randomChump( std::string name )
-{
-	Zombie *zombie = newZombie(name);
-	zombie->announce();
-	delete (zombie);
-}
+Makefile, main.cpp, Weapon.{h, hpp}, Weapon.cpp, HumanA.{h,
+hpp}, HumanA.cpp, HumanB.{h, hpp}, HumanB.cpp

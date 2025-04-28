@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 22:09:15 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/28 23:52:28 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/29 00:03:12 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ public:
 	void announce( void );
 	Zombie(std::string name);
 	~Zombie();
-
-
 };
 #endif
