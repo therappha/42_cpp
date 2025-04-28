@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 18:55:36 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 02:03:18 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:53:30 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ class Contact
 		string _darkestSecret;
 
 	public:
-		Contact(){}
-		~Contact() {}
+		Contact();
+		~Contact();
 
 		string	getName() const;
 		string	getLastname() const;

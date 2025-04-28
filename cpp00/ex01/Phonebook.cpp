@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:46:42 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/28 21:05:17 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:54:31 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ Phonebook::Phonebook()
 {
 	contact_counter = 0;
 	oldest_contact_id = -1;
+}
+
+Phonebook::~Phonebook()
+{
+	
 }
 
 void	Phonebook::AddContact(Contact contact)

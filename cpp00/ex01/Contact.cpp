@@ -6,13 +6,22 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:20:21 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 02:23:57 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:54:07 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 using std::string;
+
+Contact::Contact()
+{
+
+}
+Contact::~Contact()
+{
+	
+}
 
 string Contact::getName()  const
 {
