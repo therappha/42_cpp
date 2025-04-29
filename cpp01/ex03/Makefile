@@ -1,10 +1,10 @@
-NAME = getbrained
+NAME = fightmorons
 
 CXX = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp 
+SRCS = main.cpp HumanA.cpp Weapon.cpp HumanB.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
