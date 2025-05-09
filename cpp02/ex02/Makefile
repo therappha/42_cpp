@@ -11,7 +11,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJS) -I Fixed.hpp -o $(NAME)
 
 %.o : %.cpp
 	$(CXX) $(CFLAGS) -c $^ -o $@

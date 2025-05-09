@@ -6,9 +6,12 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 18:01:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/08 22:12:40 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:07:19 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
@@ -40,6 +43,10 @@ public:
 	Fixed operator * (const Fixed& other) const;
 	Fixed operator / (const Fixed& other) const;
 
+	Fixed& operator ++ (void); // pre increment operator
+	Fixed operator ++ (int); // post increment operator
+	Fixed& operator -- (void); // pre decrement operator
+	Fixed operator -- (int); // post decrement operator
 	Fixed& operator = (const Fixed& other);	// A copy assignment operator overload.
 
 	// Methods
@@ -56,6 +63,7 @@ public:
 
 std::ostream& operator<<(std::ostream& out, const Fixed& object); 	// Overload insertion operator
 
+#endif
 /*Add public member functions to your class to overload the following operators:
 • The 6 comparison operators: >, <, >=, <=, ==, and !=.
 • The 4 arithmetic operators: +, -, *, and /.
