@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 18:02:14 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 18:59:46 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:35:35 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Fixed::Fixed(const int integer)
 {
 	const int	abs_max = (1 << (32 - this->_fractional_bits));
 
-	std::cout << "Int constructor called" << std::endl;
 	this->_value = 0;
 	if (integer < (abs_max) && integer > -(abs_max))
 		this->_value |= integer << this->_fractional_bits;
@@ -39,7 +38,6 @@ Fixed::Fixed(const int integer)
 
 Fixed::Fixed(const float floating_point)
 {
-	std::cout << "Float constructor called" << std::endl;
 
 	this->_value = roundf(floating_point * (float)(1 << this->_fractional_bits));
 }
@@ -188,7 +186,6 @@ Fixed Fixed::operator / (const Fixed& other) const
 
 	newfixed.setRawBits((int)temp);
 	return (newfixed);
-	return (Fixed(0));
 }
 
 Fixed& Fixed::operator ++ (void)
@@ -203,5 +200,20 @@ Fixed Fixed::operator ++ (int)
 	newfixed.setRawBits(this->getRawBits());
 
 	this->_value++;
+	return (newfixed);
+}
+
+Fixed& Fixed::operator -- (void)
+{
+	this->_value--;
+	return (*this);
+}
+Fixed Fixed::operator -- (int)
+{
+	Fixed newfixed;
+
+	newfixed.setRawBits(this->getRawBits());
+
+	this->_value--;
 	return (newfixed);
 }

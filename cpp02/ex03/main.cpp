@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 21:49:08 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 22:14:46 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/09 22:15:26 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ int	main(void)
 	{
 		std::cout << " >> NO" << std::endl;
 	}
-
 }

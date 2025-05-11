@@ -6,13 +6,13 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 21:40:24 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 19:06:13 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:38:13 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-/*
+
 int main( void )
 {
 	Fixed a;
@@ -29,9 +29,8 @@ int main( void )
 	return 0;
 
 }
-*/
 
-
+/*
 int main()
 {
 	Fixed a;                    // default constructor
@@ -45,6 +44,11 @@ int main()
 	std::cout << "d (copy of b): " << d << std::endl;
 
 	std::cout << "\n--- Arithmetic ---" << std::endl;
+	std::cout << "b + c = " << (b + c) << std::endl;
+	std::cout << "b - c = " << (b - c) << std::endl;
+	std::cout << "b * c = " << (b * c) << std::endl;
+	std::cout << "b / c = " << (b / c) << std::endl;
+		std::cout << "\n--- Arithmetic ---" << std::endl;
 	std::cout << "b + c = " << (b + c) << std::endl;
 	std::cout << "b - c = " << (b - c) << std::endl;
 	std::cout << "b * c = " << (b * c) << std::endl;
@@ -71,3 +75,5 @@ int main()
 
 	return 0;
 }
+*/
+

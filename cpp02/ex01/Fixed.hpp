@@ -6,12 +6,15 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 18:01:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/08 21:09:29 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:05:10 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cmath>
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 class Fixed{
 
@@ -34,6 +37,7 @@ public:
 };
 std::ostream& operator<<(std::ostream& out, const Fixed& object); 	// Overload insertion operator
 
+#endif
 /*
 Add the following public constructors and public member functions to your class:
 • A constructor that takes a constant integer as a parameter.

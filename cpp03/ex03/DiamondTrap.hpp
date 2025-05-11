@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 18:01:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 19:05:32 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/05/11 18:43:56 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/05/11 19:13:23 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-class Fixed{
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap{
 
 private:
-	int					_value;
-	static const int	_fractional_bits;
+	std::string _name;
+	DiamondTrap(); //default constructor
+	DiamondTrap(const DiamondTrap& other); // copy constructor
+	DiamondTrap& operator = (const DiamondTrap& other); // copy assignment operator
 
 public:
-	Fixed(); 								// A default constructor
-	Fixed(const Fixed& other);				// A copy constructor.
-	~Fixed(); 								// A destructor.
-
-	Fixed& operator = (const Fixed& other);	// A copy assignment operator overload.
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	DiamondTrap(const std::string& name);
+	~DiamondTrap();
+	void whoAmI();
 };
 
 #endif

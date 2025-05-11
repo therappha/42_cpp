@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 18:01:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 19:07:19 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:31:12 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ public:
 
 std::ostream& operator<<(std::ostream& out, const Fixed& object); 	// Overload insertion operator
 
-#endif
 /*Add public member functions to your class to overload the following operators:
 • The 6 comparison operators: >, <, >=, <=, ==, and !=.
 • The 4 arithmetic operators: +, -, *, and /.
@@ -79,3 +78,6 @@ numbers as parameters, and returns a reference to the smallest one.
 parameters, and returns a reference to the greatest one.
 • A static member function max that takes two references to constant fixed-point
 numbers as parameters, and returns a reference to the greatest one. */
+
+#endif
+

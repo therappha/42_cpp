@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 18:01:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 19:05:32 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/05/11 18:26:08 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/05/11 18:42:26 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-class Fixed{
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap{
 
 private:
-	int					_value;
-	static const int	_fractional_bits;
+	FragTrap(); //default constructor
+	FragTrap(const FragTrap& other); // copy constructor
+	FragTrap& operator = (const FragTrap& other); // copy assigment operator
 
 public:
-	Fixed(); 								// A default constructor
-	Fixed(const Fixed& other);				// A copy constructor.
-	~Fixed(); 								// A destructor.
-
-	Fixed& operator = (const Fixed& other);	// A copy assignment operator overload.
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	~FragTrap();
+	FragTrap(const std::string& name); // constructor
+	void highFivesGuys(void);
 };
 
 #endif
