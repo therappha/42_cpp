@@ -6,14 +6,14 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 20:27:35 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/13 16:32:50 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:01:08 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef Cat_HPP
-#define Cat_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
 #include "Animal.hpp"
 #include "Brain.hpp"

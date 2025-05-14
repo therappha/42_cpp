@@ -6,14 +6,14 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 20:27:35 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/13 16:23:34 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:01:16 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef Dog_HPP
-#define Dog_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include "Animal.hpp"
 #include "Brain.hpp"

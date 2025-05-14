@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:26:22 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/13 17:12:30 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:50:33 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Brain& Brain::operator = (const Brain& other)
 	{
 		for (int i = 0; i < 100; i++)
 		{
-			ideas[i] = other.ideas[i];
+			_ideas[i] = other._ideas[i];
 		}
 	}
 	return (*this);
@@ -46,12 +46,12 @@ const std::string Brain::getIdeas(unsigned int i)
 {
 	if (i < 100)
 	{
-		return this->ideas[i];
+		return this->_ideas[i];
 	}
-	return this->ideas[0];
+	return this->_ideas[0];
 }
 void Brain::setIdea(unsigned int index, const std::string& idea)
 {
 	if (index < 100)
-		this->ideas[index] = idea;
+		this->_ideas[index] = idea;
 }

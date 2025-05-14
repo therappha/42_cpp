@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:51:30 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/13 16:51:31 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:13:51 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void Dog::setIdea(unsigned int index, const std::string& idea)
 	if (index > 99)
 		return ;
 	if (!idea.empty())
-		this->brain->ideas[index] = idea;
+		this->brain->setIdea(index, idea);
 }
 std::string Dog::getIdea(unsigned int index) const
 {
 	if (index < 100)
 	{
-		return this->brain->ideas[index];
+		return this->brain->getIdeas(index);
 	}
-	return (this->brain->ideas[0]);
+	return (this->brain->getIdeas(0));
 }

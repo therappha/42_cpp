@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:24:50 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/13 17:12:23 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:50:38 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@
 class Brain{
 
 private:
+	std::string _ideas[100];
 	Brain& operator = (const Brain& other); // copy assigment operator
 
 protected:
 
 public:
-	std::string ideas[100];
+
 	Brain(); // default constructor
 	Brain(const Brain& other); //copy constructor
 	~Brain(); //destructor

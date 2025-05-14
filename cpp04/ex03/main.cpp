@@ -5,24 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 21:45:47 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/14 16:01:28 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/05/14 17:09:39 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/05/14 17:10:59 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-int main()
+
+int	main(void)
 {
+	IMateriaSource* src = new MateriaSource();
 
-	const Animal* j = new Dog();
-	const Animal* k = new Cat();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
 
-	delete j;
-	delete k;
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-	// const Animal* l = new Animal();
-	// delete l;
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+	
+	return (0);
 }

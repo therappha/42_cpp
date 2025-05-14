@@ -16,7 +16,6 @@
 #include <string>
 #include <iostream>
 
-
 class WrongAnimal{
 
 private:
