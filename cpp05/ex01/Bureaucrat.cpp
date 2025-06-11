@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:12:31 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/10 19:14:30 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/11 18:23:46 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,17 +89,32 @@ void	Bureaucrat::decrementGrade()
 {
 	setGrade(this->_grade + 1);
 }
+/*Receives a Form object and asks the bureaucrat to sign, it throws an exception if the
+bureaucrat does not have the grade necessary to sign it or if the form is already signed!*/
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << this->_name << " could'nt sign " << form.getName() << " because "
+		<< e.what() << std::endl;
+	}
+}
 
 
 /* ----------------------- Exception Methods ---------------------------*/
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade Too Low!");
+	return ("Bureaucrat: grade is too low!");
 }
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade Too High!");
+	return ("Bureaucrat: grade is too high!");
 }
 
 /*You must implement an overload of the insertion («) operator to print output in the

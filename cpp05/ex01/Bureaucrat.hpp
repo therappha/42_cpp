@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:08:05 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/10 21:45:25 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/11 19:09:32 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
+#include "Form.hpp"
+class Form;
 
 class Bureaucrat{
 
@@ -24,10 +26,9 @@ private:
 
 	Bureaucrat(); // default constructor
 	Bureaucrat& operator = (const Bureaucrat& other); // copy assignment operator
-	bool	is_ValidGrade(int grade);
+	bool		is_ValidGrade(int grade);
 
 	//Exceptions
-
 
 
 public:
@@ -35,11 +36,12 @@ public:
 	~Bureaucrat(); // destructor
 	Bureaucrat(const Bureaucrat& other); // copy constructor
 
-	void	setGrade(int grade); //setter
-	int		getGrade() const; // getter
-	void	incrementGrade();
-	void	decrementGrade();
-	const std::string getName() const;
+	void				setGrade(int grade);	//setter
+	int					getGrade() const;		// getter
+	void				incrementGrade();		// method
+	void				decrementGrade();		// method
+	const std::string	getName() const;		// getter
+	void				signForm(Form& form);				//method
 
 	class GradeTooHighException : public std::exception{ // << must be public or else catch(std::exception &e) does not catch it
 
@@ -52,9 +54,6 @@ public:
 		public:
 			const char* what() const throw();
 	};
-
-
-
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& object);
