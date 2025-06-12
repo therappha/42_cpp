@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class	Form{
+class	AForm{
 
 private:
 	const std::string	_name;
@@ -27,13 +27,13 @@ private:
 	const int			_to_execute;
 	bool				_signed;
 
-	Form& operator = (const Form& other); // Copy assignment operator
+	AForm& operator = (const AForm& other); // Copy assignment operator
 
 public:
-	Form(); // Default Constructor
-	Form(const std::string name, int grade_to_sign, int grade_to_execute);
-	~Form(); // Default Destructor
-	Form(const Form& other); //Copy Constructor
+	AForm(); // Default Constructor
+	AForm(const std::string name, int grade_to_sign, int grade_to_execute);
+	~AForm(); // Default Destructor
+	AForm(const AForm& other); //Copy Constructor
 
 	//Getters and Setters
 	const std::string	getName(void) const;
@@ -43,6 +43,7 @@ public:
 
 	//Methods
 	void				beSigned(const Bureaucrat& bureaucrat);
+	void				execute(const Bureaucrat& bureaucrat, const std::string target);
 
 	//Exceptions
 	class GradeTooHighException : public std::exception{ // << must be public or else catch(std::exception &e) does not catch it
@@ -59,4 +60,4 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& object); //Overload insertion operator
+std::ostream& operator<<(std::ostream& out, const AForm& object); //Overload insertion operator

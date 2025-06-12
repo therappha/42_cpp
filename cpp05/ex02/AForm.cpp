@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 /* ----------------------- Constructors and Destructors ---------------------------*/
 
 //Default Constructor
-Form::Form() : _name("Default"), _to_sign(75), _to_execute(75),  _signed(false)
+AForm::AForm() : _name("Default"), _to_sign(75), _to_execute(75),  _signed(false)
 {
 
 }
 //Default Destructor
-Form::~Form()
+AForm::~AForm()
 {
 
 }
 //Constructor
-Form::Form(const std::string name, int grade_to_sign, int grade_to_execute) :
+AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute) :
 	_name(name), _to_sign(grade_to_sign), _to_execute(grade_to_execute), _signed(false)
 {
 
@@ -38,45 +38,56 @@ Form::Form(const std::string name, int grade_to_sign, int grade_to_execute) :
 	}
 	if (this->_name.empty())
 	{
-		throw std::invalid_argument("What this form for?\nName must not be empty!");
+		throw std::invalid_argument("What this AForm for?\nName must not be empty!");
 	}
 }
 //Copy Constructor
-Form::Form(const Form& other) : _name(other._name), _to_sign(other._to_sign), _to_execute(other._to_execute), _signed(other._signed)
+AForm::AForm(const AForm& other) : _name(other._name), _to_sign(other._to_sign), _to_execute(other._to_execute), _signed(other._signed)
 {
 
 }
 
 /* ----------------------- Methods ---------------------------*/
 
-void	Form::beSigned(const Bureaucrat& bureaucrat)
+void	AForm::execute(const Bureaucrat& bureaucrat, const std::string target)
+{
+
+  if (bureaucrat.getGrade() > this->getGradeToExecute())
+  {
+    throw AForm::GradeTooLowException();
+  }
+  std::cout << target << " was executed! (oh no!)\n" << std::endl;
+}
+
+
+void	AForm::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->getGradeToSign())
 	{
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	}
 	else if (this->_signed)
 	{
-		throw std::logic_error("the form was already signed!");
+		throw std::logic_error("the AForm was already signed!");
 	}
 	else
 	{
 		this->_signed = true;
 	}
 }
-const std::string Form::getName(void) const
+const std::string AForm::getName(void) const
 {
 	return (this->_name);
 }
-bool		Form::getSigned(void) const
+bool		AForm::getSigned(void) const
 {
 	return (this->_signed);
 }
-int		Form::getGradeToSign(void) const
+int		AForm::getGradeToSign(void) const
 {
 	return (this->_to_sign);
 }
-int		Form::getGradeToExecute(void) const
+int		AForm::getGradeToExecute(void) const
 {
 	return (this->_to_execute);
 }
@@ -84,7 +95,7 @@ int		Form::getGradeToExecute(void) const
 /* ----------------------- Overload Operators ---------------------------*/
 
 //Insertion operator
-std::ostream& operator<<(std::ostream& out, const Form& object)
+std::ostream& operator<<(std::ostream& out, const AForm& object)
 {
 	out << object.getName();
 	if (object.getSigned())
@@ -101,7 +112,7 @@ std::ostream& operator<<(std::ostream& out, const Form& object)
 }
 
 //Copy assigment operator
-Form& Form::operator = (const Form& other)
+AForm& AForm::operator = (const AForm& other)
 {
 	if (this != &other)
 	{
@@ -112,11 +123,11 @@ Form& Form::operator = (const Form& other)
 
 /* ----------------------- Exceptions ---------------------------*/
 
-const char*	Form::GradeTooLowException::what() const throw()
+const char*	AForm::GradeTooLowException::what() const throw()
 {
-	return ("Form: grade is too low!");
+	return ("AForm: grade is too low!");
 }
-const char*	Form::GradeTooHighException::what() const throw()
+const char*	AForm::GradeTooHighException::what() const throw()
 {
-	return ("Form: grade is too high!");
+	return ("AForm: grade is too high!");
 }
