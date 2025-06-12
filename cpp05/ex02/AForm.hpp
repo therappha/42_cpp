@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
+#include <stdint.h>
 
 class Bureaucrat;
 
@@ -26,13 +27,12 @@ private:
 	const int			_to_sign;
 	const int			_to_execute;
 	bool				_signed;
-
-	AForm& operator = (const AForm& other); // Copy assignment operator
+	bool				_executed;
 
 public:
 	AForm(); // Default Constructor
 	AForm(const std::string name, int grade_to_sign, int grade_to_execute);
-	~AForm(); // Default Destructor
+	virtual~AForm(); // Default Destructor
 	AForm(const AForm& other); //Copy Constructor
 
 	//Getters and Setters
@@ -40,10 +40,14 @@ public:
 	bool				getSigned(void) const;
 	int					getGradeToSign(void) const;
 	int					getGradeToExecute(void) const;
+	bool				getExecuted(void) const;
+	void				setExecuted(void);
 
 	//Methods
 	void				beSigned(const Bureaucrat& bureaucrat);
-	void				execute(const Bureaucrat& bureaucrat, const std::string target);
+	virtual void		execute(Bureaucrat const & executor) const = 0;
+
+		AForm& operator = (const AForm& other); // Copy assignment operator
 
 	//Exceptions
 	class GradeTooHighException : public std::exception{ // << must be public or else catch(std::exception &e) does not catch it
@@ -53,6 +57,18 @@ public:
 	};
 
 	class GradeTooLowException : public std::exception{
+
+		public:
+			const char* what() const throw();
+	};
+
+	class FormNotSignedException : public std::exception{
+
+		public:
+			const char* what() const throw();
+	};
+
+	class FormAlreadyExecutedException : public std::exception{
 
 		public:
 			const char* what() const throw();

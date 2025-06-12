@@ -14,7 +14,7 @@
 /* ----------------------- Constructors and Destructors ---------------------------*/
 
 //Default Constructor
-AForm::AForm() : _name("Default"), _to_sign(75), _to_execute(75),  _signed(false)
+AForm::AForm() : _name("Default"), _to_sign(75), _to_execute(75), _signed(false)
 {
 
 }
@@ -49,14 +49,17 @@ AForm::AForm(const AForm& other) : _name(other._name), _to_sign(other._to_sign),
 
 /* ----------------------- Methods ---------------------------*/
 
-void	AForm::execute(const Bureaucrat& bureaucrat, const std::string target)
+void	AForm::execute(Bureaucrat const & executor) const
 {
-
-  if (bureaucrat.getGrade() > this->getGradeToExecute())
-  {
-    throw AForm::GradeTooLowException();
-  }
-  std::cout << target << " was executed! (oh no!)\n" << std::endl;
+	if (executor.getGrade() > this->getGradeToExecute())
+	{
+		throw AForm::GradeTooLowException();
+	}
+	else if (this->getSigned())
+	{
+		throw FormNotSignedException();
+	}
+	std::cout << "target" << " was executed! (oh no!)\n" << std::endl;
 }
 
 
@@ -83,6 +86,7 @@ bool		AForm::getSigned(void) const
 {
 	return (this->_signed);
 }
+
 int		AForm::getGradeToSign(void) const
 {
 	return (this->_to_sign);
@@ -91,6 +95,7 @@ int		AForm::getGradeToExecute(void) const
 {
 	return (this->_to_execute);
 }
+
 
 /* ----------------------- Overload Operators ---------------------------*/
 
@@ -125,9 +130,15 @@ AForm& AForm::operator = (const AForm& other)
 
 const char*	AForm::GradeTooLowException::what() const throw()
 {
-	return ("AForm: grade is too low!");
+	return ("Form: grade is too low!");
 }
 const char*	AForm::GradeTooHighException::what() const throw()
 {
-	return ("AForm: grade is too high!");
+	return ("Form: grade is too high!");
 }
+
+const char*	AForm::FormNotSignedException::what() const throw()
+{
+	return ("Form: Form needs to be signed to be executed!");
+}
+
