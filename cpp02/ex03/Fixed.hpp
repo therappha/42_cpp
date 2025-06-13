@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 18:01:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/09 20:29:49 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/11 15:38:36 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ public:
 	Fixed operator ++ (int); // post increment operator
 	Fixed& operator -- (void); // pre decrement operator
 	Fixed operator -- (int); // post decrement operator
-	Fixed& operator = (const Fixed& other);
+	Fixed& operator = (const Fixed& other); // copy assigment operator
 
 	// Methods
 	float toFloat( void ) const;

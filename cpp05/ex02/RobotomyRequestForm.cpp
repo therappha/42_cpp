@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:15:32 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/12 22:11:27 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/13 17:07:31 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const
 	{
 		throw FormNotSignedException();
 	}
-	std::cout << "Making some drilling noises!" << std::endl;
+	std::cout << "You hear some drilling noises!" << std::endl;
 	if (randvalue % 2 == 0)
 	{
 		std::cout << this->_target << " has been Robotomized!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:32:19 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 02:45:17 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/11 17:11:35 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	loop()
 		{
 			if (!phonebook.ShowAll())
 				continue ;
-			
+
 		}
 		if (line == "EXIT")
 		{

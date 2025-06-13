@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 15:53:51 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/14 17:13:40 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/26 12:22:03 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class MateriaSource : IMateriaSource{
 
 private:
+
 	MateriaSource&	operator = (const MateriaSource& other);
 	AMateria* templates[4];
 
@@ -29,9 +30,6 @@ public:
 
 	void		learnMateria(AMateria*);
 	AMateria*	createMateria(std::string const & type);
-
-
-
 
 
 };

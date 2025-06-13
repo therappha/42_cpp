@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:15:32 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/12 21:24:33 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/13 17:13:01 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,21 @@ void		ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 	{
 		throw FormNotSignedException();
 	}
-	std::cout << "Planting imaginary trees inside imaginary files" << std::endl;
-	//tree code here;
+	std::ofstream tree_file;
+	std::string tree_name = this->getTarget() + "_target";
+	tree_file.open(tree_name.c_str());
+	if (tree_file.fail())
+	{
+		std::cout << "Could not open file " << this->getTarget() << "_target" << std::endl;
+	}
+	tree_file <<
+		"       ###\n"
+		"      #o###\n"
+		"    #####o###\n"
+		"   #o#\\#|#/###\n"
+		"    ###\\|/#o#\n"
+		"     # }|{  #\n"
+		"rafa   }|{\n";
 
 }
 const std::string ShrubberyCreationForm::getTarget(void) const

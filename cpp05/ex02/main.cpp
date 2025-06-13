@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 18:06:25 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/12 22:37:21 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/13 17:10:48 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "ShrubberyCreationForm: Test 1, Do we really need all those trees?: " << std::endl;
 		Bureaucrat burocrata("Greta", 130);
-		ShrubberyCreationForm form("File");
+		ShrubberyCreationForm form("Someothergarden");
 		burocrata.signForm(form);
 		burocrata.executeForm(form);
 	}
@@ -38,7 +38,7 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "ShrubberyCreationForm: Test 2, Sir, the form has to be signed: " << std::endl;
 		Bureaucrat burocrata("John Coisado", 130);
-		ShrubberyCreationForm form("File");
+		ShrubberyCreationForm form("seujardim");
 		burocrata.executeForm(form);
 	}
 
@@ -46,7 +46,7 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "ShrubberyCreationForm: Test 3, you don't have the power to do this: " << std::endl;
 		Bureaucrat burocrata("Pedro the First", 146);
-		ShrubberyCreationForm form("File");
+		ShrubberyCreationForm form("Meujardmi");
 		burocrata.signForm(form);
 	}
 
@@ -54,7 +54,7 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "ShrubberyCreationForm: Test 4, we need someone better: " << std::endl;
 		Bureaucrat burocrata("Some Low Level", 144);
-		ShrubberyCreationForm form("File");
+		ShrubberyCreationForm form("Garden");
 		burocrata.signForm(form);
 		burocrata.executeForm(form);
 	}
@@ -64,7 +64,7 @@ int	main(void)
 		std::cout << "ShrubberyCreationForm: Test 5, Do we really need two people for this?!: " << std::endl;
 		Bureaucrat lowlevel("Oh, Poor Guy", 145);
 		Bureaucrat richguy("Oh, Less Poor Guy", 138);
-		ShrubberyCreationForm form("form");
+		ShrubberyCreationForm form("Gardenizacao");
 		lowlevel.signForm(form);
 		lowlevel.executeForm(form);
 		richguy.executeForm(form);
@@ -76,7 +76,7 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << "ShrubberyCreationForm: Test 6, He can't do nothing!: " << std::endl;
 		Bureaucrat burocrata("Oh, Poor Guy", 150);
-		ShrubberyCreationForm form("form");
+		ShrubberyCreationForm form("trees everywhere");
 		burocrata.signForm(form);
 		burocrata.executeForm(form);
 	}

@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:51:24 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/12 22:09:34 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:11:57 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class Animal{
 
 private:
-	Animal(const Animal& other); //copy constructor
 
 protected:
 	std::string type;
@@ -28,6 +27,7 @@ protected:
 public:
 	Animal();
 	Animal& operator = (const Animal& other);
+	Animal(const Animal& other);
 	virtual ~Animal();
 	std::string getType() const;
 	virtual void makeSound() const;

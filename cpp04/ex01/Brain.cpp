@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:26:22 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/13 17:50:33 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:22:11 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 Brain::Brain()
 {
 	std::cout << "Brain constructed!" << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		_ideas[i] = "";
+	}
 }
 
 Brain& Brain::operator = (const Brain& other)

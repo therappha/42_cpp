@@ -23,6 +23,7 @@ $(NAME) : $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
+	rm -rf *_target
 
 fclean: clean
 	rm -rf $(NAME)

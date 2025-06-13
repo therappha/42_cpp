@@ -6,19 +6,21 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:10:21 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/12 22:11:17 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/13 13:35:34 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AForm.hpp"
+#include <fstream>
+
 
 class ShrubberyCreationForm : public AForm {
 
 private:
 	ShrubberyCreationForm& operator = (const ShrubberyCreationForm& other); // Copy assigment operator
-	const std::string _target;
+	const std::string	_target;
 
 public:
 	//Constructors and Destructors
@@ -30,9 +32,6 @@ public:
 	// Methods
 	void		execute(const Bureaucrat& bureaucrat) const;
 	const std::string getTarget(void) const;
-
-
-
 
 };
 
