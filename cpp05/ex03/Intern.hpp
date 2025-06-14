@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 17:15:28 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/13 17:47:25 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:30:56 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ public:
 	~Intern();
 
 	AForm* makeForm(const std::string form, const std::string target);
+	AForm* makePresidentialPardon(const std::string target);
+	AForm* makeRobotomyRequest(const std::string target);
+	AForm* makeShrubberryCreationForm(const std::string target);
 
 	class FormNotFoundException : public std::exception{
 		const char* what() const throw();

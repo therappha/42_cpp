@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 18:06:25 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/13 17:10:48 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 16:33:18 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 #include <iostream>
 #include <cstdlib>
@@ -250,6 +251,4 @@ std::cout << "\n*--------------------- RobotomyRequestForm Tests ---------------
 		burocrata.incrementGrade();
 		burocrata.executeForm(form);
 	}
-
-
 }
