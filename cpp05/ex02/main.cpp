@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 18:06:25 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/13 17:10:48 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:22:37 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,6 +250,4 @@ std::cout << "\n*--------------------- RobotomyRequestForm Tests ---------------
 		burocrata.incrementGrade();
 		burocrata.executeForm(form);
 	}
-
-
 }
