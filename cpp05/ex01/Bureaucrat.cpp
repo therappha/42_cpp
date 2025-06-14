@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:12:31 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/11 18:23:46 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:12:03 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int Bureaucrat::getGrade() const
 	return (this->_grade);
 }
 
-const std::string Bureaucrat::getName() const
+const std::string& Bureaucrat::getName() const
 {
 	return (this->_name);
 }

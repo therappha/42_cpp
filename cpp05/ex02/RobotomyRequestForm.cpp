@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:15:32 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/13 17:07:31 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:13:02 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const
 	}
 
 }
-const std::string RobotomyRequestForm::getTarget(void) const
+const std::string& RobotomyRequestForm::getTarget(void) const
 {
 	return (this->_target);
 }

@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:08:05 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/10 21:46:16 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:04:18 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
 	int		getGrade() const; // getter
 	void	incrementGrade();
 	void	decrementGrade();
-	const std::string getName() const;
+	const std::string& getName() const;
 
 	class GradeTooHighException : public std::exception{
 

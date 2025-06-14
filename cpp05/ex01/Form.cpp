@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 19:24:20 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/11 19:23:07 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:12:12 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Form::beSigned(const Bureaucrat& bureaucrat)
 		this->_signed = true;
 	}
 }
-const std::string Form::getName(void) const
+const std::string& Form::getName(void) const
 {
 	return (this->_name);
 }

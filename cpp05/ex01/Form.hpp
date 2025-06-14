@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 19:24:22 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/11 19:13:43 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:05:53 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 	Form(const Form& other); //Copy Constructor
 
 	//Getters and Setters
-	const std::string	getName(void) const;
+	const std::string&	getName(void) const;
 	bool				getSigned(void) const;
 	int					getGradeToSign(void) const;
 	int					getGradeToExecute(void) const;

@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:10:21 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/13 13:35:34 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:12:50 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 
 	// Methods
 	void		execute(const Bureaucrat& bureaucrat) const;
-	const std::string getTarget(void) const;
+	const std::string& getTarget(void) const;
 
 };
 

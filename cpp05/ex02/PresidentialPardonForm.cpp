@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:15:32 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/12 22:28:23 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:13:06 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		PresidentialPardonForm::execute(const Bureaucrat& bureaucrat) const
 
 
 }
-const std::string PresidentialPardonForm::getTarget(void) const
+const std::string& PresidentialPardonForm::getTarget(void) const
 {
 	return (this->_target);
 }

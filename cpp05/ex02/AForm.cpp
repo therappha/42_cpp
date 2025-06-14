@@ -78,7 +78,7 @@ void	AForm::beSigned(const Bureaucrat& bureaucrat)
 		this->_signed = true;
 	}
 }
-const std::string AForm::getName(void) const
+const std::string& AForm::getName(void) const
 {
 	return (this->_name);
 }

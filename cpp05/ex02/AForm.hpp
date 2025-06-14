@@ -36,7 +36,7 @@ public:
 	AForm(const AForm& other); //Copy Constructor
 
 	//Getters and Setters
-	const std::string	getName(void) const;
+	const std::string&	getName(void) const;
 	bool				getSigned(void) const;
 	int					getGradeToSign(void) const;
 	int					getGradeToExecute(void) const;

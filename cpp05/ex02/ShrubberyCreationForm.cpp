@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 20:15:32 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/13 17:13:01 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:12:55 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void		ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 		"rafa   }|{\n";
 
 }
-const std::string ShrubberyCreationForm::getTarget(void) const
+const std::string& ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
 }
