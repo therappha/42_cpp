@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 18:44:41 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/14 20:19:36 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/21 21:51:53 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,14 @@ class ScalarConverter{
 		~ScalarConverter(); // Destructor
 		ScalarConverter(const ScalarConverter& other); // Copy Constructor
 		ScalarConverter& operator = (const ScalarConverter& other); //Copy Assignment Operator
+		const std::string getType(const std::string& literal);
+		void	convertChar(const std::string& literal);
 
 	public:
-
+		static bool isChar(const std::string& literal);
+		static bool isInt(const std::string& literal);
+		static bool isFloat(const std::string& literal);
+		static bool isDouble(const std::string& literal);
 		static void convert(const std::string& num);
 
 };
