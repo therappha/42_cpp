@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 18:44:05 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/22 19:30:32 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/06/26 15:18:22 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/06/26 15:18:36 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Base.hpp"
 
-int	main(int ac, char **av)
+Base::~Base()
 {
-	if (ac != 2)
-	{
-		std::cout << "invalid number of arguments" << std::endl;
-		return (0);
-	}
-	try
-	{
-		ScalarConverter::convert(av[1]);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+
 }

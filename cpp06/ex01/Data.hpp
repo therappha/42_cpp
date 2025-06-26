@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 18:44:05 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/22 19:30:32 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/06/22 19:34:14 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/06/25 20:19:03 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
-int	main(int ac, char **av)
-{
-	if (ac != 2)
-	{
-		std::cout << "invalid number of arguments" << std::endl;
-		return (0);
-	}
-	try
-	{
-		ScalarConverter::convert(av[1]);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+#include <string>
+#include <stdint.h>
+#include <stdexcept>
+
+class Data{
+
+private:
+
+	const std::string	_name;
+	const uint32_t		_age;
+	Data& operator= (const Data& other);
+
+public:
+	Data();
+	~Data();
+	Data(const Data& other);
+	const std::string& getName(void) const;
+	uint32_t getAge(void) const;
+	Data(const std::string& name, const uint32_t age);
+
+
+};

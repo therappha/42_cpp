@@ -5,26 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 18:44:05 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/22 19:30:32 by rafaelfe         ###   ########.fr       */
+/*   Created: 2025/06/25 20:40:28 by rafaelfe          #+#    #+#             */
+/*   Updated: 2025/06/26 15:22:55 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include <iostream>
+#include "Identify.hpp"
 
-int	main(int ac, char **av)
+int main(void)
 {
-	if (ac != 2)
-	{
-		std::cout << "invalid number of arguments" << std::endl;
-		return (0);
-	}
-	try
-	{
-		ScalarConverter::convert(av[1]);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	srand (time(NULL));
+	Base* randomclass = generate();
+
+	identify(randomclass);
+	delete randomclass;
+
+	A a;
+	B b;
+	C c;
+	Base base;
+	
+	identify(a);
+	identify(b);
+	identify(c);
+	identify(base);
 }

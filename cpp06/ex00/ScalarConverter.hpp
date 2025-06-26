@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 18:44:41 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/22 19:22:41 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/22 19:30:13 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScalarConverter{
 
 	private:
+	
 		ScalarConverter(); //Default Constructor
 		~ScalarConverter(); // Destructor
 		ScalarConverter(const ScalarConverter& other); // Copy Constructor
