@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 02:14:45 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/28 15:27:35 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:44:03 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,11 @@ int	main(int argc, char **argv)
 			break;
 		while (1)
 		{
-			index = line.find("0x", 0);
+			index = line.find(oldword, 0);
 			if (index == std::string::npos)
 				break;
-			int newindex;
-			for (newindex = index; line[newindex] != ' '; newindex++)
-			{
-
-			}
-			line.erase(index, newindex - 1);
-
+			line.erase(index, oldword.length());
+			line.insert(index, replace);
 		}
 		output << line << std::endl;
 		line.clear();
