@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:40:18 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/26 15:20:15 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/06/26 16:15:08 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void identify(Base& p)
 	{
 
 	}
+	
 	std::cout << "Object " << &p << "is not  an instance of \"A\" \"B\" nor \"C\"" << std::endl;
 
 }

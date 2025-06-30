@@ -40,8 +40,6 @@ public:
 	bool				getSigned(void) const;
 	int					getGradeToSign(void) const;
 	int					getGradeToExecute(void) const;
-	bool				getExecuted(void) const;
-	void				setExecuted(void);
 
 	//Methods
 	void				beSigned(const Bureaucrat& bureaucrat);
