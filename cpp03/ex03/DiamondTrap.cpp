@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 18:53:41 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/05/11 19:19:45 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/01 14:17:13 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 	std::cout << "DiamondTrap "<< name << " was created!" << std::endl;
 	this->_name = name;
 	this->_energyPoints = 50;
-	ClapTrap::setName(this->_name + "_clap_name");
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
