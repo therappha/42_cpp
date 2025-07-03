@@ -6,12 +6,12 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:45:54 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/27 16:53:19 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:36:41 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#include <iostream>
 #include <cstddef>
 
 template <typename T, typename F>

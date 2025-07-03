@@ -6,25 +6,35 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 21:34:55 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/07/02 21:55:29 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:33:00 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <algorithm>
+#include <stdexcept>
 
 template <typename T>
-T& easyfind(T &array, int tofind)
+typename T::iterator easyfind(T &array, int tofind)
 {
-
+	typename T::iterator it = std::find(array.begin(), array.end(), tofind);
+	if (it == array.end())
+	{
+		throw std::logic_error("No objects with the passed value!");
+	}
+	return it;
 }
 template <typename T>
-T& easyfind(const T &array, int tofind)
+const typename T::iterator easyfind(const T &array, const int tofind)
 {
-
+	typename T::iterator it = std::find(array.begin(), array.end(), tofind);
+	if (it == array.end())
+	{
+		throw std::logic_error("No objects with the passed value!");
+	}
+	return it;
 }
-
 
 
 /*A first easy exercise is the way to start off on the right foot.
