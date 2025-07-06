@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:32:19 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/11 17:11:35 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/04 19:04:35 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,15 @@ Contact create_contact()
 	while (!contact.setName(input))
 	{
 		std::cout << "Please enter your first name: ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cin.clear();
+			input.clear();
+		}
 		std::cout << std::endl;
 		Capitalize(input);
 	}
+	std::cin.clear();
 	input.clear();
 	while (!contact.setLastname(input))
 	{

@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:46:42 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/28 23:54:31 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:58:19 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Phonebook::Phonebook()
 
 Phonebook::~Phonebook()
 {
-	
+
 }
 
 void	Phonebook::AddContact(Contact contact)
@@ -81,7 +81,7 @@ bool	Phonebook::ShowAll(void) const
 	}
 	print_column("----------" , "----------", "----------", "----------");
 	index.clear();
-
+	
 	while (index.length() != 1 && !std::isdigit(index[0]))
 	{
 		std::cout << "Please select one of the contact index: ";

@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 21:34:55 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/07/03 21:33:00 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/06 18:54:58 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdexcept>
 
 template <typename T>
-typename T::iterator easyfind(T &array, int tofind)
+typename T::iterator easyFind(T &array, int tofind)
 {
 	typename T::iterator it = std::find(array.begin(), array.end(), tofind);
 	if (it == array.end())
@@ -26,9 +26,9 @@ typename T::iterator easyfind(T &array, int tofind)
 	return it;
 }
 template <typename T>
-const typename T::iterator easyfind(const T &array, const int tofind)
+typename T::const_iterator easyFind(const T &array, int tofind)
 {
-	typename T::iterator it = std::find(array.begin(), array.end(), tofind);
+	typename T::const_iterator it = std::find(array.begin(), array.end(), tofind);
 	if (it == array.end())
 	{
 		throw std::logic_error("No objects with the passed value!");

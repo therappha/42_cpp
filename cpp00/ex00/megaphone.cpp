@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:32:19 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/04/27 15:49:56 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:56:43 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	}
 	for (size_t i = 0; i < str.length(); i++)
 	{
-		cout << (char)toupper(str[i]);
+		cout << static_cast<char>(toupper(str[i]));
 	}
 	cout << endl;
 }

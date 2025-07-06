@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:54:11 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/30 16:46:42 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/05 19:25:31 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
 	Array() : _elements(NULL), _size(0)
 	{
-
+		this->_elements = new T[0];
 	}
 	Array(unsigned int n) : _size(n)
 	{
@@ -35,21 +35,33 @@ public:
 	}
 	Array(const Array& rhs) : _size(rhs._size)
 	{
-		(*this) = rhs;
+		this->_elements = NULL;
+		if (rhs._size > 0)
+		{
+			this->_elements = new T[rhs._size];
+			for (unsigned int i = 0; i < rhs._size; i++)
+			{
+				this->_elements[i] = rhs._elements[i]; // Maybe put NULL on end????? //
+			}
+		}
+
 	}
 	~Array()
 	{
-		if (this->_size > 0)
-		{
-			delete[] this->_elements;
-		}
+		delete[] this->_elements;
 	}
 
 	/*- ***************************** Operators ***************************** -*/
 
 	Array& operator = (const Array& rhs)
 	{
+		if (this == &rhs)
+		{
+			return (*this);
+		}
+		delete[] this->_elements;
 		this->_elements = new T[rhs._size];
+		this->_size = rhs._size;
 		for (unsigned int i = 0; i < rhs._size; i++)
 		{
 			this->_elements[i] = rhs._elements[i]; // Maybe put NULL on end????? //
@@ -57,9 +69,18 @@ public:
 		return (*this);
 	}
 
-	T& operator[](unsigned int i)
+	T& operator[](size_t i)
 	{
-		if (i < 0 || i >= _size)
+		if (i >= _size)
+		{
+			throw std::out_of_range("Out of bounds access");
+		}
+		return (_elements[i]);
+	}
+
+	const	T& operator[](size_t i) const
+	{
+		if (i >= _size)
 		{
 			throw std::out_of_range("Out of bounds access");
 		}

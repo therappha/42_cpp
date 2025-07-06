@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:45:54 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/07/03 21:36:41 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/05 18:36:53 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,16 @@ void	iter(T* array,  std::size_t length, F f)
 		f(array[i]);
 	}
 }
-
+/*
+template <typename T>
+void	iter(T* array,  std::size_t length, void (*f)(T &))
+{
+	for (size_t i = 0; i < length; i++)
+	{
+		f(array[i]);
+	}
+}
+*/
 template <typename T>
 void	print_element(T& element)
 {

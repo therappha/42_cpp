@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:46:18 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/27 16:53:13 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/05 19:00:04 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	change_student(std::string& student)
 {
 	student+= "_student";
 }
+
 
 int	main(void)
 {

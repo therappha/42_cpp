@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:29:20 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/06/26 17:16:37 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/05 18:57:20 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ int	main(void)
 		std::cout << "min between a and b is: " << min(a, b) << std::endl;
 		std::cout << "max between a and b is: " << max(a, b) << std::endl;
 	}
+
+
 
 }
