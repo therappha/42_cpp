@@ -6,7 +6,7 @@
 /*   By: rafaelfe <rafaelfe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 17:17:57 by rafaelfe          #+#    #+#             */
-/*   Updated: 2025/07/06 21:26:58 by rafaelfe         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:36:02 by rafaelfe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 
 	MutantStack<T>() : std::stack<T>() {}
 	MutantStack<T>(const MutantStack<T>& other) : std::stack<T>(other) {}
+	
 	MutantStack<T>& operator =(const MutantStack<T>& rhs)
 	{
 		if (this != &rhs)
