@@ -23,4 +23,5 @@ class BitcoinExchange
         ~BitcoinExchange(); //Default Destructor
         BitcoinExchange(const BitcoinExchange& other); //Copy Constructor
         BitcoinExchange& operator = (const BitcoinExchange& other); //Copy Assigment Operator   
+        bool isValidDate(const std::string& date);
 };
