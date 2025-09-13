@@ -10,11 +10,12 @@
 #include <iomanip>
 #include <cstdlib>
 #include <cstdio>
+#include <cmath>
 
 class BitcoinExchange
 {
     private:
-        std::map<std::string, float> _database;
+        std::map<std::string, double> _database;
 
     public:
         BitcoinExchange(); //Default Constructor here because it will not be instantiated

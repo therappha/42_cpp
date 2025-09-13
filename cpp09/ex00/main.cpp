@@ -48,7 +48,7 @@ int main(int ac, char **av)
     }
     catch (std::exception &e)
     {
-        std::cerr << "Could not parse file because: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
     return(EXIT_SUCCESS);
 }
