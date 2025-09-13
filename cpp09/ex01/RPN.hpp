@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <sstream>
 #include <iostream>
+#include <cstdlib> // exit_sucess
 
 class RPN 
 {

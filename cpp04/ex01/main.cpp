@@ -17,7 +17,7 @@
 
 int main()
 {
-	/*
+	
 	const Animal* j = new Dog();
 	const Animal* k = new Cat();
 
@@ -47,8 +47,7 @@ int main()
 	{
 		delete animals[i];
 	}
-
-	*/
+	
 	Dog *cao = new Dog();
 	Dog *cachorro = new Dog();
 
