@@ -18,20 +18,21 @@ void BitcoinExchange::loadDatabase(std::ifstream& database)
 
     std::getline(database, dateStr);
     if (dateStr != "date,exchange_rate")
-        throw std::runtime_error("Invalid database, file should start with date,exchange_rate ");
+        throw std::runtime_error("Invalid database, file should start with 'date,exchange_rate'. ");
     dateStr.clear();
 
     while ((std::getline(database, dateStr, ',') && std::getline(database, valueStr)))
     {
         value = std::strtod(valueStr.c_str(), NULL);
         if (isValidDate(dateStr))
-    {
-        std::cout << dateStr << "is valid" << std::endl;
+        {
+             _database[dateStr] =  value;
+        }
+        else
+        {
+            throw std::runtime_error("Invalid database, a invalid date has been detected. ");
+        }  
     }
-        _database[dateStr] =  value;
-    }
- 
-
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
@@ -62,11 +63,10 @@ bool BitcoinExchange::isValidDate(const std::string& date)
     int month = 0;
     int day = 0;
 
-    std::cout << date << std::endl;
     if (sscanf(date.c_str(), "%d-%d-%d\n", &year, &month, &day) != 3)
     {   
      
-      throw std::runtime_error("invalid date");
+      return (0);
     }
 
     datetime.tm_year = year - 1900; // Number of years since 1900
@@ -82,11 +82,11 @@ bool BitcoinExchange::isValidDate(const std::string& date)
 
     if (t == -1 )
     {
-        throw std::runtime_error("invalid date");
+        return (0);
     }
     if (datetime.tm_year != year - 1900|| datetime.tm_mon != month - 1 || datetime.tm_mday != day)
     {
-        throw std::runtime_error("invalid date");
+        return (0);
     }
 
    return (1);
