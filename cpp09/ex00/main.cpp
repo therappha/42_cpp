@@ -13,8 +13,7 @@ int main(int ac, char **av)
         std::cerr << "No input File, usage: ./btc input_file" << std::endl;
         return (EXIT_FAILURE);
     }
-    
-    //Open files
+
     dataFile.open("data.csv", std::ios::in);
     if (!dataFile)
     {
@@ -48,7 +47,7 @@ int main(int ac, char **av)
     }
     catch (std::exception &e)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cerr << "Critical Error: " << e.what() << std::endl;
     }
     return(EXIT_SUCCESS);
 }

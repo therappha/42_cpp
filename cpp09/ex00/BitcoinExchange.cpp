@@ -23,8 +23,8 @@ void BitcoinExchange::loadDatabase(std::ifstream& database)
     dateStr.clear();
 
     while ((std::getline(database, dateStr, ',') && std::getline(database, valueStr)))
-    {   
-      
+    {
+
         if (valueStr == "\n")
         {
             throw std::runtime_error("Invalid database, a invalid date has been detected. ");
@@ -40,7 +40,7 @@ void BitcoinExchange::loadDatabase(std::ifstream& database)
         {
             throw std::runtime_error("Invalid database, a invalid date has been detected. ");
         }
-    
+
         if (dateStr.length() == 10 && isValidDate(dateStr) && value >= 0 && value < 2147483648)
         {
              _database[dateStr] =  value;
@@ -48,7 +48,7 @@ void BitcoinExchange::loadDatabase(std::ifstream& database)
         else
         {
             throw std::runtime_error("Invalid database, a invalid date has been detected. ");
-        }  
+        }
     }
 }
 
@@ -73,7 +73,7 @@ void    BitcoinExchange::parseInput(std::ifstream& input)
     {
         int num;
         double          value;
-        try 
+        try
         {
             if (sscanf(dateStr.c_str(), "%d-%d-%d | %lf\n", &num, &num, &num, &value ) != 4)
             {
@@ -106,7 +106,7 @@ void    BitcoinExchange::parseInput(std::ifstream& input)
                         it--;
                 }
                 if (it == _database.begin() && line != _database.begin()->first)
-                {      
+                {
                     throw std::runtime_error("No bitcoin value available for this date.");
                 }
                 std::cout << line << " => " << value << " = "  << (value * it->second) <<  std::endl;
@@ -137,7 +137,7 @@ bool BitcoinExchange::isValidDate(const std::string& date)
     int day = 0;
 
     if (sscanf(date.c_str(), "%d-%d-%d\n", &year, &month, &day) != 3)
-    {   
+    {
       return (0);
     }
     if (year < 1901)
@@ -145,14 +145,12 @@ bool BitcoinExchange::isValidDate(const std::string& date)
         return (0);
     }
 
-    datetime.tm_year = year - 1900; // Number of years since 1900
-    datetime.tm_mon = month - 1; // Number of months since January
+    datetime.tm_year = year - 1900;
+    datetime.tm_mon = month - 1;
     datetime.tm_mday = day;
     datetime.tm_hour = 12;
     datetime.tm_min = 30;
     datetime.tm_sec = 1;
-
-    datetime.tm_isdst = -1;
 
     time_t t = mktime(&datetime);
 
@@ -167,3 +165,4 @@ bool BitcoinExchange::isValidDate(const std::string& date)
 
    return (1);
 }
+
