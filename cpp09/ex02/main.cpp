@@ -15,5 +15,5 @@ int main(int ac, char **av)
 
 	mergeSort.sort(arr, ac - 1);
 
-	delete arr;
+	//delete arr[];
 }

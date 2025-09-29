@@ -51,8 +51,10 @@ void PmergeMe::vectorSort(std::vector<unsigned int> nums)
 	{
 		std::cout << *it << " ";
 	}
-	std::cout << "\n";
+	std::cout << "aqui!";
+	std::cout << std::endl;
 }
+
 void PmergeMe::swapToIncrement(std::vector<unsigned int>& nums, unsigned int index, unsigned int increment)
 {
 	 for (unsigned int i = 0; i < increment; i++)
@@ -76,8 +78,9 @@ void PmergeMe::sort(int *av, unsigned int size)
 		vector_nums.push_back(static_cast<unsigned int>(av[i]));
 		//deque_nums.push_back(av[i]);
 
-		vectorSort(vector_nums);
+		
 
 	}
+	vectorSort(vector_nums);
 }
 
