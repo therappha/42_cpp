@@ -13,46 +13,90 @@ void PmergeMe::dequeSort(std::deque<unsigned int> nums)
 {
 	(void) nums;
 }
-void PmergeMe::vectorSort(std::vector<unsigned int> nums)
+std::vector<unsigned int> PmergeMe::vectorSort(int currentLevel, std::vector<unsigned int> nums)
 {
-	unsigned int odd = 0;
+    unsigned int odd = 0;
 	bool hasodd = false;
-	//step 1 pre organize our stack
-	//lets assume our list is odd so we have 7, 2, 6 , 9, 16, 15 ,22 ,23, 37, 29 , 30, 3, 5
-	//so 5 is left over to organize after everything
+	bool alternate = true;
+  	unsigned int increment = 1 << currentLevel;
+	std::vector <unsigned int> result;
+	std::vector <unsigned int> pend;
+
+    if (increment > nums.size() / 2)
+	{
+		return (nums);
+	}
 	if (nums.size() % 2 != 0)
 	{
 		odd = nums.back();
 		nums.pop_back();
 		hasodd = true;
+		std::cout << "Has odd" << std::endl;
 	}
 	if (odd || hasodd)
 	{
 		(void)odd;
 	}
-	//First iteration, swap numbers in chunks of two
-	//7, 2, 6 , 9, 16, 15 ,22 ,23, 37, 29 , 30, 3 becomes:
-	//[2, 7], [6, 9], [15, 16], [22, 23], [29, 37], [3, 30];
+  
+    // for (unsigned int i = increment - 1; i < nums.size(); i += increment * 2)
+	// {
+	// 	if (i +  increment < nums.size() && nums[i] > nums[i + increment])
+	// 	{
+	// 		swapToIncrement(nums, i - (increment - 1), increment);
+	// 	}
+	// }
 
-	//now lets start stacking or numbers into stacks of 4, in this case the 4th element will be the biggest always
-	//in stacks of 8 the 8th element will be the biggest so we need to compare those only, it always increments as power of 2
-	// so when increment > stack_size /2 it stops and goes to the step 2;
-	for (unsigned int increment = 1; increment <= nums.size() / 2; increment <<= 1)
+
+    // nums = vectorSort(currentLevel + 1, nums);
+	//8 10 9 13 2 7 11 20 1 3 5 6 14 17 15 
+
+	
+	unsigned int j = 0;
+	if (currentLevel == 0)
 	{
-		for (unsigned int i = increment - 1; i < nums.size(); i += increment * 2)
+		increment = 1;
+	}
+	unsigned int i = 0;
+	while (1)
+	{
+		if (j == increment )
 		{
-			if (i +  increment < nums.size() && nums[i] > nums[i + increment])
-			{
-				swapToIncrement(nums, i - (increment - 1), increment);
-			}
+			alternate = !alternate;
+			i += increment;
+			j = 0;
 		}
+		if (nums.size() - i < increment)
+			break;
+		if (i < increment * 2)
+		{
+			result.push_back(nums[i]);
+		}
+		else if (alternate)
+		{
+			pend.push_back(nums[i + j++]);
+			continue;
+		}
+		else
+		{
+			result.push_back(nums[i + j++]);
+			continue;
+		}
+		i++;
 	}
-	for (std::vector<unsigned int>::const_iterator it = nums.begin(); it != nums.end(); ++it)
+
+	result = binary_insertion(increment, result, pend);
+
+	while (i < nums.size())
 	{
-		std::cout << *it << " ";
+		result.push_back(nums[i++]);
 	}
-	std::cout << "aqui!";
 	std::cout << std::endl;
+	if (hasodd)
+	{
+		result.push_back(odd);
+	}
+    return result;
+
 }
 
 void PmergeMe::swapToIncrement(std::vector<unsigned int>& nums, unsigned int index, unsigned int increment)
@@ -68,6 +112,22 @@ unsigned int PmergeMe::calculateJacobsthalNum(unsigned int n)
 }
 
 
+vector<unsigned int> PmergeMe::binary_insertion(int size, std::vector<unsigned int>& result, std::vector<unsigned int> pend)
+{
+	int elementcount = 0;
+	while (pend.size() != 0)
+	{
+		elementcount = nums.size() / size;
+
+	}
+	
+	
+	*/
+	(void)nums;
+	(void )result;
+	(void)size;
+}
+
 void PmergeMe::sort(int *av, unsigned int size)
 {
 	std::vector<unsigned int> vector_nums;
@@ -81,6 +141,14 @@ void PmergeMe::sort(int *av, unsigned int size)
 		
 
 	}
-	vectorSort(vector_nums);
+	
+	vector_nums = vectorSort(0, vector_nums);
+	std::cout << "\nFinal Result ";
+    for (unsigned int i = 0; i < vector_nums.size(); i++)
+    {
+         std::cout << vector_nums[i] << " ";
+    }
+    std::cout << std::endl;
+       
 }
 

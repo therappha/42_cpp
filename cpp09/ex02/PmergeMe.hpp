@@ -21,9 +21,10 @@ class PmergeMe
 		PmergeMe& operator = (const PmergeMe& other);
 
 		void dequeSort(std::deque<unsigned int> nums);
-		void vectorSort(std::vector<unsigned int> nums);
+		std::vector<unsigned int> vectorSort(int currentLevel, std::vector<unsigned int> nums);
 		unsigned int calculateJacobsthalNum(unsigned int n);
 		void swapToIncrement(std::vector<unsigned int>& nums, unsigned int index, unsigned int increment);
+		vector<unsigned int> binary_insertion(int size, std::vector<unsigned int>& result, std::vector<unsigned int> pend)
 
 	public:
 		PmergeMe();
