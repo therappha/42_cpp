@@ -115,17 +115,33 @@ unsigned int PmergeMe::calculateJacobsthalNum(unsigned int n)
 vector<unsigned int> PmergeMe::binary_insertion(int size, std::vector<unsigned int>& result, std::vector<unsigned int> pend)
 {
 	int elementcount = 0;
+	int last_jacob = 1;
+	int current_jacob = 3;
+	int toadd = 2;
+	elementcount = nums.size() / size;
 	while (pend.size() != 0)
 	{
-		elementcount = nums.size() / size;
+		if (current_jacob - last_jacob > elementcount)
+		{
+			//insert entire pend;
+		}
+		else
+		{
 
+		}
+
+
+
+
+		elementcount = nums.size() / size;
 	}
+
 	
+
+}
+void	insertElement(int size, std::vector<unsigned int>& result, std::vector<unsigned int>::iterator it)
+{
 	
-	*/
-	(void)nums;
-	(void )result;
-	(void)size;
 }
 
 void PmergeMe::sort(int *av, unsigned int size)
@@ -137,9 +153,6 @@ void PmergeMe::sort(int *av, unsigned int size)
 	{
 		vector_nums.push_back(static_cast<unsigned int>(av[i]));
 		//deque_nums.push_back(av[i]);
-
-		
-
 	}
 	
 	vector_nums = vectorSort(0, vector_nums);
