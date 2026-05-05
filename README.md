@@ -46,8 +46,7 @@ A deeper dive into the STL, applying containers and algorithms to solve more com
 Also implementation of Ford Johnson Algoritm. Here's a 'simple' diagram of how the algorithm works:
 
 <img width="403" height="350" alt="image" src="https://github.com/user-attachments/assets/570594eb-0845-433b-9862-cc526a562dfc" />
-<img width="1884" height="894" alt="image" src="https://github.com/user-attachments/assets/b8fa759e-5911-49fb-8a44-fa020cf56b94" />
-
+<img width="1907" height="960" alt="image" src="https://github.com/user-attachments/assets/6fc1e14f-41fd-4df0-a6d6-56066f82b8d1" />
 
 ---
 
