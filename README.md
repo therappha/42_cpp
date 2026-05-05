@@ -43,7 +43,7 @@ Working with the STL (Standard Template Library): containers (`vector`, `list`, 
 
 ### CPP09 — STL
 A deeper dive into the STL, applying containers and algorithms to solve more complex problems. Reinforces choosing the right data structure for a given problem.
-Also implementation of Ford Johnson Algoritm. Here's a 'simple' diagram of how the algorithm works:
+Also implementation of Ford Johnson Algoritm. Here's a 'simple' diagram I made to explain the algorithm:
 
 <img width="403" height="350" alt="image" src="https://github.com/user-attachments/assets/570594eb-0845-433b-9862-cc526a562dfc" />
 <img width="1907" height="960" alt="image" src="https://github.com/user-attachments/assets/6fc1e14f-41fd-4df0-a6d6-56066f82b8d1" />
